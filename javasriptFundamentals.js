@@ -72,28 +72,7 @@ const AssignmentGroup = {
     }
   ]
 };
-function validateInput(courseInfo, assignmentGroup, learnerSubmissions) {
-  if (
-    !courseInfo ||
-    !courseInfo.id ||
-    typeof courseInfo.name !== "string" ||
-    !assignmentGroup ||
-    !assignmentGroup.id ||
-    typeof assignmentGroup.name !== "string" ||
-    typeof assignmentGroup.course_id !== "number" ||
-    typeof assignmentGroup.group_weight !== "number" ||
-    !assignmentGroup.assignments ||
-    !Array.isArray(assignmentGroup.assignments) ||
-    !learnerSubmissions ||
-    !Array.isArray(learnerSubmissions)
-  ) {
-    throw new Error("Invalid input data.");
-  }
 
-  if (courseInfo.id !== assignmentGroup.course_id) {
-    throw new Error("Assignment group does not belong to the specified course.");
-  }
-}
 
 
 // The provided learner submission data.
